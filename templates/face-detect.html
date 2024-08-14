@@ -99,7 +99,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ url_for('index') }}" class="logo d-flex align-items-center">
         <img src="static/assets/img/SmallSquareLogoJpg-removebg-preview.png" alt="Logo" class="logo-image" style="height: 40px; margin-right: 10px;">
         <h1 class="sitename">يقـظ</h1>
       </a>
@@ -113,7 +113,7 @@
             <ul>
               <li><a href="{{ url_for('face_detect') }}">  كشف المجرمين المحتملين </a></li>
               <li><a href="{{ url_for('xray_detect') }}"> كشف الأمتعة الممنوعة داخل الحقائب </a></li>
-              <li><a href="#"> الاحصائيات </a></li>
+              <li><a href="{{ url_for('stats') }}"> الاحصائيات </a></li>
             </ul>
           </li>
           <li><a href="#team">الفريق</a></li>
@@ -186,6 +186,7 @@
 
           </div>
 
+          <!-- 
           <div class="col-xl-7">
             <div class="row gy-4 icon-boxes">
 
@@ -195,7 +196,7 @@
                   <h3>استجابة سريعة</h3>
                   <p>تحليل البيانات في الوقت الحقيقي لتوفير استجابة سريعة ودقيقة.</p>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div> End Icon Box End Icon Box -->
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box" id="resultContainer">
@@ -203,7 +204,7 @@
                   <img id="resultImage" src="static/assets/img/example.jpg" alt="">
 
                 </div>
-            </div> <!-- End Icon Box -->
+            </div>
 
 
             </div>
@@ -288,7 +289,7 @@
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon"><i class="bi bi-shield-lock"></i></div>
-          <h4><a href="face-detect.html">تحديد الأشخاص المشبوهين</a></h4>
+          <h4><a href="{{ url_for('face_detect') }}">تحديد الأشخاص المشبوهين</a></h4>
           <p>استخدام تقنيات الذكاء الاصطناعي لتحليل تعابير الوجه وتحديد الركاب المشبوهين.</p>
         </div>
       </div>
@@ -296,15 +297,15 @@
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon"><i class="bi bi-chat-square-text"></i></div>
-          <h4><a href="xray-detect.html">كشف الأمتعة الممنوعة داخل الحقائب</a></h4>
+          <h4><a href="{{ url_for('xray_detect') }}">كشف الأمتعة الممنوعة داخل الحقائب</a></h4>
           <p>تحليل صور الأشعة السينية للحقائب للتعرف على التهديدات المحتملة بشكل دقيق وسريع.</p>
         </div>
-      </div>
+      </div>            
 
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
           <div class="icon"><i class="bi bi-search"></i></div>
-          <h4><a href="#">استعراض الاحصائيات المتعلقة بالأمن داخل المنشأة</a></h4>
+          <h4><a href="{{ url_for('stats') }}">استعراض الاحصائيات المتعلقة بالأمن داخل المنشأة</a></h4>
           <p></p>
         </div>
       </div>

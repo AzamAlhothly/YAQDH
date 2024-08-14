@@ -170,6 +170,12 @@ def face_detect():
 def index():
     return render_template('index.html')
 
+ 
+
+@app.route('/stats')
+def stats():
+    return render_template('stats.html')
+
 
 def process_image(image_path):
     # Load the image
